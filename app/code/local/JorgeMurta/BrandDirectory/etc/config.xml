@@ -6,4 +6,29 @@
             <version>0.0.1</version>
         </JorgeMurta_BrandDirectory>
     </modules>
+
+    <global>
+        <models>
+                <jorgemurta_branddirectory>
+                    <resourceModel>jorgemurta_branddirectory_resource</resourceModel>
+                </jorgemurta_branddirectory>
+
+                <jorgemurta_branddirectory_resource>
+                    <entities>
+                        <brand>
+                            <table>jorgemurta_branddirectory_brand</table>
+                        </brand>
+                    </entities>
+                </jorgemurta_branddirectory_resource>
+        </models>
+
+        <resources>
+            <jorgemurta_branddirectory_setup>
+                <setup>
+                    <module>SmashingMagazine_BrandDirectory</module>
+                    <class>Mage_Core_Model_Resource_Setup</class>
+                </setup>
+            </jorgemurta_branddirectory_setup>
+        </resources>
+    </global>
 </config>
