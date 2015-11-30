@@ -1,6 +1,6 @@
 <?php
 
-class JorgeMurta_BrandDirectory_Block_Adminhtml_Grid extends Mage_Adminhtml_Block_Widget_Grid
+class JorgeMurta_BrandDirectory_Block_Adminhtml_Brand_Grid extends Mage_Adminhtml_Block_Widget_Grid
 {
     protected function _prepareCollection()
     {
