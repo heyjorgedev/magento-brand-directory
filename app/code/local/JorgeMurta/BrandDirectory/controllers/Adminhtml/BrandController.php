@@ -27,9 +27,11 @@ class JorgeMurta_BrandDirectory_Adminhtml_BrandController extends Mage_Adminhtml
         if ($brandId = $this->getRequest()->getParam('id', false)) {
             $brand->load($brandId);
 
-            if ($brand->getId() _getSession()->addError(
+            if ($brand->getId()) {
+                _getSession()->addError(
                     $this->__('This brand no longer exists.')
                 );
+
                 return $this->_redirect(
                     'jorgemurta_branddirectory_admin/brand/index'
                 );
@@ -75,5 +77,57 @@ class JorgeMurta_BrandDirectory_Adminhtml_BrandController extends Mage_Adminhtml
         $this->loadLayout()
             ->_addContent($brandEditBlock)
             ->renderLayout();
+    }
+
+    public function deleteAction()
+    {
+        $brand = Mage::getModel('jorgemurta_branddirectory/brand');
+
+        if ($brandId = $this->getRequest()->getParam('id', false)) {
+            $brand->load($brandId);
+        }
+
+        if ($brand->getId()) {
+            _getSession()->addError(
+                $this->__('This brand no longer exists.')
+            );
+
+            return $this->_redirect(
+                'jorgemurta_branddirectory_admin/brand/index'
+            );
+        }
+
+        try {
+            $brand->delete();
+
+            $this->_getSession()->addSuccess(
+                $this->__('The brand has been deleted.')
+            );
+        } catch (Exception $e) {
+            Mage::logException($e);
+            $this->_getSession()->addError($e->getMessage());
+        }
+
+        return $this->_redirect(
+            'jorgemurta_branddirectory_admin/brand/index'
+        );
+    }
+
+    protected function _isAllowed()
+    {
+        $actionName = $this->getRequest()->getActionName();
+        switch ($actionName) {
+            case 'index':
+            case 'edit':
+            case 'delete':
+            // intentionally no break
+            default:
+                $adminSession = Mage::getSingleton('admin/session');
+                $isAllowed    = $adminSession
+                    ->isAllowed('jorgemurta_branddirectory/brand');
+                break;
+        }
+
+        return $isAllowed;
     }
 }
