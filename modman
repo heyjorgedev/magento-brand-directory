@@ -1,0 +1,5 @@
+# Deploy the Module Code
+app/code/local/JorgeMurta/BrandDirectory app/code/local/JorgeMurta/BrandDirectory
+
+# Get Magento to know BrandDirectory Module
+app/etc/modules/JorgeMurta_BrandDirectory.xml
