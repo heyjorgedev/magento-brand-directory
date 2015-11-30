@@ -18,7 +18,7 @@ $table->setName($this->getTable('jorgemurta_branddirectory/brand'));
  * =============================
  *  Add Table Columns
  * =============================
- * - entity_id
+ * - id
  * - created_at
  * - updated_at
  * - name
@@ -27,7 +27,7 @@ $table->setName($this->getTable('jorgemurta_branddirectory/brand'));
  * - visibility
  */
 $table->addColumn(
-    'entity_id',
+    'id',
     Varien_Db_Ddl_Table::TYPE_INTEGER,
     10,
     array(
