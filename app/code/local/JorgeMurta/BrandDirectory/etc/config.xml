@@ -10,6 +10,7 @@
     <global>
         <models>
                 <jorgemurta_branddirectory>
+                    <class>JorgeMurta_BrandDirectory_Model</class>
                     <resourceModel>jorgemurta_branddirectory_resource</resourceModel>
                 </jorgemurta_branddirectory>
 
@@ -25,10 +26,54 @@
         <resources>
             <jorgemurta_branddirectory_setup>
                 <setup>
-                    <module>SmashingMagazine_BrandDirectory</module>
+                    <module>JorgeMurta_BrandDirectory</module>
                     <class>Mage_Core_Model_Resource_Setup</class>
                 </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
             </jorgemurta_branddirectory_setup>
         </resources>
+
+        <blocks>
+            <jorgemurta_branddirectory_adminhtml>
+               <class>JorgeMurta_BrandDirectory_Block_Adminhtml</class>
+            </jorgemurta_branddirectory_adminhtml>
+        </blocks>
+
+        <helpers>
+            <jorgemurta_branddirectory>
+                <class>JorgeMurta_BrandDirectory_Helper</class>
+            </jorgemurta_branddirectory>
+        </helpers>
+
     </global>
+
+    <admin>
+        <routers>
+
+            <!-- This is the alias for this router. -->
+            <jorgemurta_branddirectory_admin>
+
+                <!--
+                This basically informs Magento to use the
+                admin scope for requests to this router.
+                -->
+                <use>admin</use>
+
+                <args>
+                    <!--
+                    This tells Magento where to find
+                    adminhtml controllers for this module.
+                    -->
+                   <module>JorgeMurta_BrandDirectory_Adminhtml</module>
+
+                    <!-- This is the term used in the actual URL. -->
+                    <frontName>brand-directory-admin</frontName>
+                </args>
+
+            </jorgemurta_branddirectory_admin>
+
+        </routers>
+    </admin>
 </config>
