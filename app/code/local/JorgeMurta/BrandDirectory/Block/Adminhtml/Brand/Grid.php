@@ -27,10 +27,10 @@ class JorgeMurta_BrandDirectory_Block_Adminhtml_Brand_Grid extends Mage_Adminhtm
         /**
          * Here, we'll define which columns to display in the grid.
          */
-        $this->addColumn('entity_id', array(
+        $this->addColumn('id', array(
             'header' => $this->_getHelper()->__('ID'),
             'type'   => 'number',
-            'index'  => 'entity_id',
+            'index'  => 'id',
         ));
 
         $this->addColumn('created_at', array(
