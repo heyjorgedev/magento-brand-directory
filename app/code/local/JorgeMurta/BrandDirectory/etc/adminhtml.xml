@@ -16,15 +16,10 @@
 
             <!-- Under this top-level menu, create a child menu item. -->
             <children>
-                <brand translate="title"
-                        module="jorgemurta_branddirectory">
+                <brand translate="title">
                     <title>Manage Brands</title>
                     <sort_order>10</sort_order>
-
-                    <!--
-                    When the menu is clicked, take the user here.
-                    -->
-                 <action>jorgemurta_branddirectory_admin/brand</action>
+                    <action>jorgemurta_branddirectory_admin/brand</action>
 
                 </brand>
             </children>
@@ -36,13 +31,11 @@
         <resources>
             <admin>
                 <children>
-                    <jorgemurta_branddirectory translate="title"
-                            module="jorgemurta_branddirectory">
+                    <jorgemurta_branddirectory translate="title" module="jorgemurta_branddirectory">
                         <title>Brand Directory</title>
                         <sort_order>75</sort_order>
                         <children>
-                            <brand translate="title"
-                                    module="jorgemurta_branddirectory">
+                            <brand translate="title">
                                 <title>Manage Brands</title>
                             </brand>
                         </children>
